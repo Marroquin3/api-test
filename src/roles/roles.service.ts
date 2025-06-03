@@ -30,10 +30,10 @@ export class RolesService {
             const roles = await this.rolRepository.find({where: {isActive: true}});
 
             if(roles.length>0){
-                return {ok: true, roles, status: 200}
+                return {ok: true, roles, message: "Roles encontrados"}
             }
 
-            return {ok: false, message: "Ah ocurrido un error", status: 404} 
+            // return {ok: false, message: "Ah ocurrido un error", roles: roles} 
         } catch (error) {
             return {
                 ok: false, message: "Ocurrio un error al obtener los roles",
